@@ -1,0 +1,46 @@
+---
+title: Introduction to Git
+author: Dr. Carl G. Stahmer
+date: December 2, 2020
+output:
+   rmdformats::readthedown
+---
+
+# 1. What is Version Control
+
+Version control describes a process of storing and organizing multiple versions/copies of documents that you create.  Approaches to version control range from the simple to the complex and can involve the use of various human workflows and/or software applications to accomplish the overall goal of storing and managing multiple versions of the same document(s).  
+
+Most people have a folder/directory somewhere on their computer that looks something like this:
+
+```
+url <- "http://www.online-image-editor.com//styles/2014/images/example_image.png"
+```
+
+![](./img/mac_finder_1.png)
+
+
+
+# Live Session Information
+
+The live session for the workshop will be held via Zoom on Friday, December X, 2020.  Zoom login inofmration for all participatns will be sent via email.
+
+
+# Objectives for this Workshop
+``` {objective}
+1. Learn about the history of VCS including its value and function;
+2. Gain an understanding of how VCS mange files on your computer;
+2. Successfully install and run the Git VCS on your local computer;
+3. Learn how to interact with your computer using the Command Line;
+4. Learn the basic basic Command Line commands needed to work with Git;
+5. Successfully create local repositories;
+6. Learn how to place files under version control;
+7. Learn how to comapare multiple versions of the same file;
+8. Learn how to roll-back to earlier versions of a file;
+9. Perform basic branching and merging;
+10. Understand basic Git Workflows.
+```
+
+
+
+### Next Topic:  [What is Version Control](https://www.youtube.com/playlist?list=PLoROMvodv4rOFZnDyrlW3-nI7tMLtmiJZ&disable_polymer=true)
+
