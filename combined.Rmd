@@ -163,7 +163,7 @@ If you are installing Git on a Windows operating system, follow the instructions
 
 [How to Download and Install Git on Windows 10 & Choose Install Options](https://www.youtube.com/watch?v=nbFwejIsHlY)
 
-The download url is [https://git-scm/com/downloads](https://git-scm/com/downloads).
+The download url is [https://git-scm/com/downloads](https://git-scm.com/downloads).
 
 *Windows users should verify that when downloading Git for Windows they have also installed Git Bash, which is necessary for working with Git in command line.*
 
@@ -173,7 +173,7 @@ If you are installing Git on a Mac, there is no extra configuration.  Simply go 
 
 # Verifying Your Install
 
-**Whether you're installing on Windows or Mac, note that unlike most applications that you’ve installed before, you will not find a "Git" application in your programs or applications directory once the installation is complete.**  Git is a command-line application with which you interact using the command-line, which we’ll cover during the interactive session.  As long as you don't get an explicit error message during the installation process, you can assume that the software was successfully installed. To verify this, open Terminal (for Windows that will be Git Bash) and type *git --version*. You should then see a response of your installed version (git version 2.12.2.windows.2, or git version 2.12.2.mac.2), and not the error "command not found."
+**Whether you're installing on Windows or Mac, note that unlike most applications that you’ve installed before, you will not find a "Git" application in your programs or applications directory once the installation is complete.**  As long as you don't get an explicit error message during the installation process, you can assume that the software was successfully installed. Git is a command-line application with which you interact using the command-line, which we’ll cover during the interactive session.  If you're already familiar with using command line, you can verify your install by opening the terminal (for Windows that will be Git Bash) and type *git --version*. You should then see a response of your installed version (e.g., git version 2.12.2.windows.2, or git version 2.12.2.mac.2), and not the error "command not found." If you aren't familiar with command line we'll cover this during the Interactive Session.
 
 # Installation Troubleshooting
 
