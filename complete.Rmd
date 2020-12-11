@@ -18,10 +18,14 @@ url8 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/directory.png"
 url9 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/mac_finder_3.png"
 url10 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/version_tree.png"
 url11 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/TT_tree_mobile.jpg"
+url12 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/mac_terminal.png"
+url13 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/bash.png"
+url14 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/GIT-Branchand-its-Operations.png"
 url15 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/datalab-logo-full-color-rgb.png"
 ```
 
 ![](`r url15`)
+
 
 # Introduction
 
@@ -182,14 +186,266 @@ If you are installing Git on a Mac, there is no extra configuration.  Simply go 
 
 If you are not able to successfully intall Git on your own, please attend DataLab's Virtual Office Hours, which are held every Monday afternoon from 1:30 to 3:00 pm, to get help with your installation.  Click [here](https://datalab.ucdavis.edu/office-hours/) for more information and to receive a Zoom link.
 
-
 # Ready, Set, Go...
 
-If you've read and understood the information in this online turorial and successfully installed Git on your local machine, you're ready for the Interactive Session!
+If you've read and understood the information in this online turorial and successfully installed Git on your local machine, you're ready for the Interactive Session!  The sections that follow present exhibits to which we will refer during the live session.
+
+# Working with the Command Line
+
+There are serveral Graphical User Interfaces that allow you to interact with Git on your computer, but Git is, at heart, a Command Line Interface.  The Command Line offers a text-only, non graphical means of interacting with your computer.  In the beginning, all user interaction with the computer happend at the command line.  In the current days of graphical user interaces, using the Command Line requires you to launch a special program that provides Command Line access.  
+
+**Mac users** will use an applicaiton called "Terminal" which ships by default with the Mac operating system.  To launch the Terminal applicaiton, go to:
+
+> Applicaitons -> Utilities -> Terminal
+
+When you launch the application, you will see something like this:
+
+![](`r url12`)
+
+Windows users will use an applicash called Git Bash, which was installed on your system when you installed Git.  To launch Git Bash, go to:
+
+> Click on the Windows Start Menu and search for "Git Bash"
+
+Alternatively,
+
+> Click on the Windows Start Menu, select Programs, and browse to Git Bash
+
+When you launch the apllication, you will see somehting like this:
+
+![](`r url13`)
+
+# Common Command Line Commands
+
+```{r, echo=FALSE}
+command <- c("ls", "ls -l", "ls -a", "pwd", "mkdir", "cd")
+command_fullname <- c(
+  "List",
+  "List with Long flag",
+  "List with All flag",
+  "Print Working Directory",
+  "Make Directory",
+  "Change Directory")
+explanation <- c(
+  "Lists all files in the current directory.", 
+  "Lists additional information about each file.",
+  "Lists all files, including hidden files.",
+  "Prints the current working directory.",
+  "Creates a new file directory.",
+  "Navigates to another directory on the file system.")
+
+command_table <- data.frame(command_fullname, explanation)
+colnames(command_table) <- c("Command Name", "Function")
+rownames(command_table) <- command
+kable(command_table[,], caption = "")
+```
+
+For a more complete list of Unix Commands, see the [Unix Cheat Sheet](http://www.mathcs.emory.edu/~valerie/courses/fall10/155/resources/unix_cheatsheet.html).
+
+
+# Creating Your First Repo
+
+Move to your Home directory
+
+```
+$ cd ~
+```
+
+note:  The $ character represents your command promt.  DO NOT type it into your terminal
+
+Create a new directory for this workshop
+
+```
+$ mkdir introtogit
+```
+
+Change to the new directory
+
+```
+$ cd introtogit
+```
+
+Put the new directory under version control
+
+```
+$ git init
+```
+
+
+# Checking the Status of a Repo
+
+To check the status of a repository use the followign command
+
+```
+$ git status
+```
+
+# Saving a Version of a File
+
+In Gitspeak, we 'commit' if version of a file to the repository to save a copy of the current working version of a file as a version.  This is a multi-step process in which we first 'stage' the file to be committed and then 'commit' the file.
+
+STEP 1:  Place the file you want to version into the Staging Area
+
+```
+$ git add <filename>
+```
+
+*Replace <filename> in the command above with the actual name of the file you want to version.*
+
+STEP 2: Commit Staged Files
+
+```
+$ git commit -m 'A detailed comment explaining the nature of the versio being committed.  Do not include any apostrophe's in your comment.'
+```
+
+# View a History of Your Commits
+
+To get a history of commits
+
+```
+$ git log
+```
+
+To see commit history with patch data (insertions and deletions) for a specified number of commits
+
+```
+$ git log -p -2
+```
+
+To see abbreviated stats for the commit history
+
+```
+$ git log --stat
+```
+
+# Comparing Commits
+
+```
+$ git diff <commit> <commit>
+```
+
+# Comparing Files
+
+```
+$ git diff <commit> <file>
+```
+
+or 
+
+```
+$ git diff <commit>:<file> <commit>:<file>
+```
+
+
+# Git Branching
+
+Branching provides a simple way to maintain multiple, side-by-side versions of the files in a repository.  Conceptually, branching a repository creates a copy of the codebase in its current state that you can work on without affecting the primary version from which it was copied.  This alows you to work down multiple paths without affecting the main (or other) codebase.
+
+![](`r url14`)
+
+To see a list of branches in your repository
+
+```
+$ git branch
+```
+
+To create a new branch
+
+```
+$ git checkout -b hotfix
+```
+
+New branches are created of the current working branch.  To change branches use
+
+```
+$ git checkout <branch name>
+```
+
+
+# Merging Branches
+
+When you merge a branch, git folds any changes that you made to files in an identified branch into the current working branch.  It also adds any new files.  When you perform a merge, a new commit will be automatically created to track the merge.  To merge branches, commit any changes to the branch you want to merge (in this example, the 'hotfix' branch) then checkout the branch into which you want to merge (for example, master), and then execute a merge command.
+
+```
+$ git commit -m 'commiting staged files in hotfix branch'
+$ git checkout master
+$ git merge hotfix
+
+```
+
+# To View an Earlier Commit
+
+```
+$ git checkout <commit>
+```
+
+To solve Detached Head problem either RESET HEAD as described below or just chekout another branch
+
+```
+git checkout <branch>
+```
+
+To save this older version as a parallel branch execute
+
+```
+$ git checkout -b <new_branch_name
+```
+
+This will save the older commit as a new branch running parallel to master.
+
+# Undoing Things
+
+One of the common undos takes place when you commit too early and possibly forget to add some files, or you mess up your commit message. If you want to redo that commit, make the additional changes you forgot, stage them, and commit again using the --amend option
+
+```
+$ git commit --amend
+```
+
+To unstage a file for commit use
+
+```
+$ git reset HEAD <file>
+```
+
+Throwing away changes you've made to a file
+
+```
+$ git checkout -- <file>
+```
+
+Rolling everything back to the last commit
+
+```
+$ git reset --hard HEAD
+```
+
+Rolling everything back to the next to last commit (The commit before the HEAD commit)
+
+```
+$ git reset --hard HEAD^
+```
+
+Rolling everything back tp two commits before the head
+
+```
+$ git reset --hard HEAD^2
+```
+
+Rolling everything back to an identified commit using HASH/ID from log
+
+```
+$ git reset --hard <commit>
+```
+
+
+# When Things go Wrong!
+
+To reset everything back to an earlier commit and make sure that the HEAD pointer is pointing to the newly reset HEAD, do the following
+
+```
+$ git reset --hard <commit>
+$ git reset --soft HEAD@{1}
+```
 
 # Additional Resources
 
 The[ Git Book](https://git-scm.com/book/en/v2) is the defintive Git resource and provides an excellent reference for everythign that we will cover in the Interactive session.  There is no need to read the book prior to the session, but it's a good reference resource to have avaialable as you begin to work with Git after the workshop.
-
-Click [here](./complete.html) to see full version with exhibits used in live course session.
-
