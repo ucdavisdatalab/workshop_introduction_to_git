@@ -19,6 +19,29 @@ url9 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/mac_finder_3.p
 url10 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/version_tree.png"
 url11 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/TT_tree_mobile.jpg"
 url15 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/datalab-logo-full-color-rgb.png"
+url19 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_1_browser.png"
+url20 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_2_git page.png"
+url21 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_3_downloading.png"
+url22 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_4_run_open.png"
+url23 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_5_allow_changes.png"
+url24 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_6_license.png"
+url25 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_7_install_location.png"
+url26 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_8_default_components.png"
+url27 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_9_checked_components.png"
+url28 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_10_start_menu.png"
+url29 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_11_editor.png"
+url30 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_12_initial_branch.png"
+url31 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_13_path.png"
+url32 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_14_HTTPS_openssl.png"
+url33 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_15_line_ending.png"
+url34 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_16_terminal_emulator.png"
+url35 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_17_git_pull.png"
+url36 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_18_credential_helper.png"
+url37 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_19_extra_options.png"
+url38 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_20_experimental_options.png"
+url39 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_21_install_progress.png"
+url40 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_22_install_complete.png"
+url41 <- "https://datalab.ucdavis.edu/cstahmer/git_workshop_images/win_git_install_23_deslect_and_finish.png"
 ```
 
 ![](`r url15`)
@@ -162,17 +185,124 @@ In order to run Git version control and be ready for the Interactive Session of 
 
 # Git on Windows
 
-If you are installing Git on a Windows operating system, follow the instructions, using the same configuration options, in the following video:  
+Follow these step-by-step instructions if you're installing Git on a Windows machine:
 
-[How to Download and Install Git on Windows 10 & Choose Install Options](https://www.youtube.com/watch?v=nbFwejIsHlY)
+First, launch a web browser, the image below shows the Microsoft Edge browser:
 
-The download url is [https://git-scm/com/downloads](https://git-scm.com/downloads).
+![](`r url19`) 
+
+Next, navigate to the following Git download URL in your browser [https://git-scm/com/downloads](https://git-scm.com/downloads):
+
+![](`r url20`) 
+
+Select "Windows" from the Downloads portion of the Git webpage. Git will diplay the following page and automatically being downloading the correct version of the Git software.  If the download doesn't start automatically, click on the "Click here to download manually link":
+
+![](`r url21`) 
+
+When the download is complete, open/Run the downloaded file (will look different in different browsers, but everyone shoudl know how to do this):
+
+![](`r url22`) 
+
+A screnn will appear asking for permissions for the Git application to make changes to your device.  Click on the **Yes** button:
+
+![](`r url23`) 
+
+Click **Next** to accept the user licence:
+
+![](`r url24`) 
+
+Leve the default "Destination Location" unchanged (usually C:\Program Files\Git) and hit **Next**
+
+![](`r url25`)
+
+You will see a screen like the one below asking you to "Select Components":
+
+![](`r url26`)
+
+Leave all of the default components selected and also check the boxes next to "Additional Icons" and it's sub-item, "On the Desktop".  Your completed configurations window should have the following compenents selected:
+
+	Additional Icons 
+		-> On the Desktop
+	Windows Explorer integration
+		-> Git Bash Here
+		-> Git GUI Here
+	Git LFS (Large File Support)
+	Associate .git* configuration files with default text editor
+	Associate .sh files to be run with Bash
+	
+And should look like this:
+
+![](`r url27`)
+
+After verifying that you have the necessary components selected as per above, hit **Next**.
+
+The next screen will ask you to "Select a Start Menu Folder."  Keep the default value of Git and hit **Next**:
+
+![](`r url28`)
+
+Leave the default "Use Vim (the ubiquitous text editor) as Git's default editor" selected o nthe "Choosing the default editor used by Git" screen and hit **Next**:
+
+![](`r url29`)
+
+On the next screen, leave the default "let Git decide" option selected and hit **Next**:
+
+![](`r url30`)
+
+Leave the default "Git from the command line and also from 3rd-party software" selected and hit **Next**:
+
+![](`r url31`)
+
+On the next "Choosing HTTPS transport backend" page leave the default "Use the OpenSSL library" option selected and hit **Next**:
+
+![](`r url32`)
+
+Leave the default "Checkout Windows-style, commit Unix-style line endings" selected on the next page and hit **Next**:
+
+![](`r url33`)
+
+
+Keep the default "Use MinTTY (the default terminal of MSYS2)" selected on the "Configuring the terminal emulator to use with Git Bash" window and hit **Next**:
+
+![](`r url34`)
+
+
+Keep the default value of "Default (fast-forward or merge)" on the "Choose the default behavior of 'git pull'" page and hit **Next**:
+
+![](`r url35`)
+
+Keep the default value of "Git Credential Manager Core" on the "Choose a credential helper" page and hit **Next**:
+
+![](`r url36`)
+
+Keep the default values on the "Configuration extra options" page by keeping "Enable file system caching" checked and "Enable symbolic links" unchecked and then hit **Next**:
+
+![](`r url37`)
+
+
+Make sure that no options are checked in the "Configuring experimental options" page and hit **Install**:
+
+![](`r url38`)
+
+
+After you hit this **Install** button as per above, you will see an install progress screen like the one below:
+
+![](`r url39`)
+
+When the install is complete, a new, "Completing the Git Setup Wizard" window like the one below will appear:
+
+![](`r url40`)
+
+Make sure that all of the options on this window are unchecked as in the image below and then hit the **Finish** button:
+
+![](`r url41`)
+
+This will complete your installation process.
 
 *Windows users should verify that when downloading Git for Windows they have also installed Git Bash, which is necessary for working with Git in command line.*
 
 # Git on Mac
 
-If you are installing Git on a Mac, there is no extra configuration.  Simply go the git download page at [https://git-scm.com/downloads](https://git-scm.com/downloads) and, choose the latest version for mac, and run the installer package when it is finished downloading.  If you get an “unknown developer” warning during the install process, follow the instructions at the beginning of the video at [https://www.youtube.com/watch?v=__kr-Ew5kbE ](https://www.youtube.com/watch?v=nbFwejIsHlY) to help you work through this problem.
+If you are installing Git on a Mac, there is no extra configuration.  Simply go the git download page at [https://git-scm.com/downloads](https://git-scm.com/downloads) and choose the latest version for mac, and run the installer package when it is finished downloading.  If you get an “unknown developer” warning during the install process, follow the instructions at the beginning of the video at [https://www.youtube.com/watch?v=__kr-Ew5kbE ](https://www.youtube.com/watch?v=__kr-Ew5kbE) to help you work through this problem.
 
 # Verifying Your Install
 
